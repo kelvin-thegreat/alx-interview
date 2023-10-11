@@ -7,18 +7,20 @@ def minOperations(n):
     """
     Calculate the fewest number of operations needed to achieve 'n' 'H' characters.
     """
-    if n <= 1:
-        return n
+    if not isinstance(n, int) or n <= 1:
+        return 0
 
-    factors = []
-    d = 2
+    operations = 0
+    clipboard = 1
+    done = 1
 
-    while d <= n:
-        if n % d == 0:
-            factors.append(d)
-            n //= d
+    while done < n:
+        if n % done == 0 and done * 2 <= n:
+            clipboard = done
+            done += clipboard
+            operations += 2
         else:
-            d += 1
+            done += clipboard
+            operations += 1
 
-    return sum(factors)
-
+    return operations
