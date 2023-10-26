@@ -7,6 +7,8 @@
 
 [Characters, Symbols, and the Unicode Miracle](https://www.youtube.com/watch?v=MijmeoH9LT4)
 
+[UTF-8 definition and Syntax of UTF-8 Byte Sequences](https://datatracker.ietf.org/doc/html/rfc3629#page-4)
+
 ### Task Completed
 + [x] 0. **UTF-8 Validation**<br/>Written a method that determines if a given data set represents a valid UTF-8 encoding.The Prototype[def validUTF8(data)]( 0-validate_utf8.py) returns `True` if data is a valid UTF-8 encoding, else return `False`
   + More requirements:
