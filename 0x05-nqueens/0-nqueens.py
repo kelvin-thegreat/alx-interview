@@ -3,7 +3,9 @@
 import sys
 
 """list of possible solutions, size and The positions on the chessboard."""
-solutions = [], n = 0, position = None
+solutions = []
+n = 0
+position = None
 
 def get_input():
     """
