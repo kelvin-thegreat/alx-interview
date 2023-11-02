@@ -50,7 +50,7 @@ def is_attacking(position1, position2):
     Returns:
         bool: True if the queens are in an attacking position else False.
     """
-    return (position1[0] == position2[0]) or (position1[1] == position2[1]) or (abs(position1[0] - position2[0]) == abs(position1[1] - position2[1]))
+    return (position1[0] == position2[0]) or (position1[1] == position2[1]) or (abs(position1[0] - position2[0]) == abs(position1[1] - position2[1))
 
 def group_exists(existing_group):
     """Checks if a group exists in the solutions.
@@ -64,7 +64,7 @@ def group_exists(existing_group):
     global queen_solutions
 
     # Check if the given group of positions exists in the solutions.
-    return any(all(solution_pos[0] == group_pos[0] and solution_pos[1] == group_pos[1] for solution_pos in solution) for solution in queen_solutions)
+    return any(all(solution_pos[0] == group_pos[0] and solution_pos[1] == group_pos[1] for group_pos in existing_group) for solution in queen_solutions)
 
 def build_solution(row, group):
     """Builds a solution.
