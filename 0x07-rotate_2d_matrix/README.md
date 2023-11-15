@@ -1,6 +1,6 @@
 # 0x07-rotate_2d_matrix
 ## Tasks Done
-+ [x] 0. Rotate 2D Matrix
++ [x] Task 0. Rotate 2D Matrix
 + [0-rotate_2d_matrix.py](0-rotate_2d_matrix.py) script contains an `n` x `n` 2D matrix, rotated to 90 degrees clockwise.
   + Prototype: `def rotate_2d_matrix(matrix)`:
   + Do not return anything. The matrix must be edited **in-place**.
