@@ -1,9 +1,7 @@
 # 0x08-making_change Project
 Task Done
 + [x] 0. Change comes from within
-
 + [0-making_change.py](0-making_change.py) contains a pile of coins of different values and determines the fewest number of coins needed to meet a given amount `total`.
-
   + Prototype: `def makeChange(coins, total)`
   + Return: fewest number of coins needed to meet `total`
     + If `total` is `0` or less, return `0`
