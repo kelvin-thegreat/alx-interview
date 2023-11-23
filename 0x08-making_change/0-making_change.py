@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Change-making
-"""
-
+"""Module for making change using the fewest number of coins"""
 
 def make_change(coins, total):
     """
@@ -17,15 +14,15 @@ def make_change(coins, total):
     """
     if total <= 0:
         return 0
-    remaining = total, coinsCount = 0, coin_index = 0
-    sorted_coins = sorted(coins, reverse=True)
-    n = len(coins)
-    while remaining > 0:
-        if coin_index >= n:
-            return -1
-        if remaining - sorted_coins[coin_index] >= 0:
-            remaining -= sorted_coins[coin_index]
-            coinsCount += 1
-        else:
-            coin_idx += 1
-    return coinsCount
+
+    """Initialize a table to store the minimum number of coins for each amount"""
+    dp = [float('inf')] * (total + 1)
+    """Base case: 0 coins needed to make change for amount 0"""
+    dp[0] = 0
+    """Iterate through each coin value"""
+    for coin in coins:
+        """Update the table for each possible amount"""
+        for amount in range(coin, total + 1):
+            dp[amount] = min(dp[amount], dp[amount - coin] + 1)
+    """If dp[total] is still infinity, it means the total cannot be achieved"""
+    return dp[total] if dp[total] != float('inf') else -1
