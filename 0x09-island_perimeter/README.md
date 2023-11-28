@@ -3,7 +3,7 @@
 
 + [x] Tasks
 + 0. Island Perimeter
-+ [0-island_perimeter.py](0-island_perimeter.py) has a script that Create a function `def island_perimeter(grid):` that returns the perimeter of the island described in `grid:`
+[0-island_perimeter.py](0-island_perimeter.py) has a script that Create a function `def island_perimeter(grid):` that returns the perimeter of the island described in `grid:`
 
 	+ `grid` is a list of list of integers:
 	  + 0 represents water
