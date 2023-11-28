@@ -3,7 +3,7 @@
 
 + [x] Tasks
 + 0. Island Perimeter
-+ Create a function def island_perimeter(grid): that returns the perimeter of the island described in grid:
++ [0-island_perimeter.py](0-island_perimeter.py) has a script that Create a function `def island_perimeter(grid):` that returns the perimeter of the island described in `grid:`
 
 	+ `grid` is a list of list of integers:
 	  + 0 represents water
@@ -14,6 +14,7 @@
 	+ The grid is completely surrounded by water
 	+ There is only one island (or nothing).
 	+ The island doesn’t have “lakes” (water inside that isn’t connected to the water surrounding the island).
+```
 guillaume@ubuntu:~/0x09$ cat 0-main.py
 #!/usr/bin/python3
 """
@@ -35,3 +36,4 @@ guillaume@ubuntu:~/0x09$
 guillaume@ubuntu:~/0x09$ ./0-main.py
 12
 guillaume@ubuntu:~/0x09$ 
+```
