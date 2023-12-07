@@ -4,41 +4,24 @@
 
 def isWinner(x, nums):
     """Determines the winner of each round and overall winner."""
-    def is_prime(num):
-        if num < 2:
-            return False
-        for i in range(2, int(num ** 0.5) + 1):
-            if num % i == 0:
-                return False
-        return True
-
-    def get_primes(limit):
-        primes = []
-        for i in range(2, limit + 1):
-            if is_prime(i):
-                primes.append(i)
-        return primes
-
-    def calculate_winner(round_nums):
-        primes = get_primes(max(round_nums))
-        round_nums_set = set(round_nums)
-
-        maria_wins = True
-        for prime in primes:
-            if any(num % prime == 0 for num in round_nums_set):
-                maria_wins = not maria_wins
-
-        return "Maria" if maria_wins else "Ben"
-
-    winners = [calculate_winner(list(range(1, num + 1))) for num in nums]
-
-    maria_wins_count = winners.count("Maria")
-    ben_wins_count = winners.count("Ben")
-
-    if maria_wins_count > ben_wins_count:
-        return "Maria"
-    elif ben_wins_count > maria_wins_count:
-        return "Ben"
-    else:
+    if x < 1 or not nums:
         return None
+    marias_wins, bens_wins = 0, 0
+    """ generate primes with a limit of the maximum number in nums"""
+    n = max(nums)
+    primes = [True for _ in range(1, n + 1, 1)]
+    primes[0] = False
+    for i, is_prime in enumerate(primes, 1):
+        if i == 1 or not is_prime:
+            continue
+        for j in range(i + i, n + 1, i):
+            primes[j - 1] = False
+    """ filtering the number of primes less than n in nums for each round"""
+    for _, n in zip(range(x), nums):
+        primes_count = len(list(filter(lambda x: x, primes[0: n])))
+        bens_wins += primes_count % 2 == 0
+        marias_wins += primes_count % 2 == 1
+    if marias_wins == bens_wins:
+        return None
+    return 'Maria' if marias_wins > bens_wins else 'Ben'
 
