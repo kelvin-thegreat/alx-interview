@@ -42,3 +42,7 @@ def isWinner(x, nums):
     else:
         return None
 
+
+if __name__ == "__main__":
+    # Test the example
+    print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
